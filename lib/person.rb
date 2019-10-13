@@ -67,8 +67,7 @@ class Person
     def start_conversation(person, topic)
         case topic 
         when "politics"
-            person.happiness -= 2
-            self.happiness -= 2
+            [person, self].each {|p| p.happiness -= 2}
             return "blah blah partisan blah lobbyist"
         when "weather"
             person.happiness += 1
